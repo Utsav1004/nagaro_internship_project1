@@ -19,7 +19,7 @@ const Chat = require('./models/chat')
 
 
 
-mongoose.connect('mongodb://localhost:27017/twitter')
+mongoose.connect('mongodb+srv://cclan:<password>@twitter.19rvsnc.mongodb.net/test')
 .then(()=>{
     console.log("db connected");
 })
@@ -100,6 +100,6 @@ io.on("connection",(socket)=>{
 
 
 
-server.listen(8080, () => {
+server.listen(process.env.PORT , () => {
   console.log("Server running at port 8080");
 });
